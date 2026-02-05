@@ -1,4 +1,4 @@
-# Hotel REST API
+# AIU Hotel REST API
 
 Assignment 4 
 
@@ -42,6 +42,7 @@ http://localhost:8080/api/guests
 Student: Aisha Mussina  
 Course: Object-Oriented Programming  
 University: Astana IT University
+
 
 http://localhost:8080/api/guests
 http://localhost:8080/api/rooms
