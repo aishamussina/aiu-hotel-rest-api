@@ -33,4 +33,27 @@ public class RoomEntity {
 
     public Boolean getAvailable() { return available; }
     public void setAvailable(Boolean available) { this.available = available; }
+    @Override
+    public String toString() {
+        return "RoomEntity{" +
+                ", roomNumber=" + roomNumber +
+                ", roomType='" + roomType + '\'' +
+                ", pricePerNight=" + pricePerNight +
+                ", available=" + available +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        RoomEntity that = (RoomEntity) o;
+        return java.util.Objects.equals(roomNumber, that.roomNumber);
+    }
+
+    @Override
+    public int hashCode() {
+        return java.util.Objects.hash(roomNumber);
+    }
+
 }

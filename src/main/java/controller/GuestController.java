@@ -1,7 +1,7 @@
 package com.aiu.hotelrestapi.controller;
 
 import com.aiu.hotelrestapi.entity.GuestEntity;
-import com.aiu.hotelrestapi.repo.GuestRepository;
+import com.aiu.hotelrestapi.service.GuestService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,25 +10,29 @@ import java.util.List;
 @RequestMapping("/api/guests")
 public class GuestController {
 
-    private final GuestRepository repo;
+    private final GuestService service;
 
-    public GuestController(GuestRepository repo) {
-        this.repo = repo;
+    public GuestController(GuestService service) {
+        this.service = service;
     }
 
     @GetMapping
     public List<GuestEntity> getAll() {
-        return repo.findAll();
+        return service.getAll();
+    }
+
+    @GetMapping("/{id}")
+    public GuestEntity getById(@PathVariable Integer id) {
+        return service.getById(id);
     }
 
     @PostMapping
     public GuestEntity create(@RequestBody GuestEntity guest) {
-        guest.setId(null);
-        return repo.save(guest);
+        return service.create(guest);
     }
 
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Integer id) {
-        repo.deleteById(id);
+        service.delete(id);
     }
 }
