@@ -44,5 +44,6 @@ http://localhost:8080/api/guests/pool/search?q=ai
 http://localhost:8080/api/guests/pool/filter?minAge=20
 
 http://localhost:8080/api/guests/pool/sort/age
+localhost:8080
 
 This project demonstrates complete backend architecture with OOP principles, JDBC database integration, RESTful API design, SOLID principles, modern Java features, and design patterns, and is fully ready for project defense.
