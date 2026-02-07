@@ -78,3 +78,36 @@ GET http://localhost:8080/api/guests/pool/filter?minAge=20
 
 ### SORT AGE
 GET http://localhost:8080/api/guests/pool/sort/age
+
+### UPDATE ROOM 402 (пример)
+PUT http://localhost:8080/jdbc/rooms/402
+Content-Type: application/json
+
+{
+  "roomNumber": 402,
+  "roomType": "single",
+  "pricePerNight": 20000,
+  "available": false
+}
+
+### DELETE ROOM 404 (пример)
+DELETE http://localhost:8080/jdbc/rooms/404
+
+### UPDATE GUEST 13 (пример)
+PUT http://localhost:8080/jdbc/guests/13
+Content-Type: application/json
+
+{
+  "name": "Dana Updated",
+  "age": 21,
+  "phone": "87001119999"
+}
+
+### DELETE GUEST 15 (пример)
+DELETE http://localhost:8080/jdbc/guests/15
+
+### SHOW ROOMS
+GET http://localhost:8080/jdbc/rooms
+
+### SHOW GUESTS
+GET http://localhost:8080/jdbc/guests
