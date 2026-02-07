@@ -29,8 +29,28 @@ public class RoomJdbcServiceImpl implements RoomJdbcService {
 
     @Override
     public RoomEntity create(RoomEntity room) {
+
+        // RTTI (ты уже сделала)
+        System.out.println(
+                com.aiu.hotelrestapi.domain.RoomRttiInspector.inspect(room)
+        );
+
+        // Factory Pattern + Polymorphism (domain objects)
+        com.aiu.hotelrestapi.domain.Room domainRoom =
+                com.aiu.hotelrestapi.domain.RoomFactory.create(
+                        room.getRoomType(),
+                        room.getRoomNumber(),
+                        room.getPricePerNight().doubleValue(),
+                        room.getAvailable()
+                );
+
+        // showing polymorphism in running flow
+        System.out.println("Factory created domain room type: " + domainRoom.getRoomType());
+
+        // save to DB via JDBC
         return repo.create(room);
     }
+
 
     @Override
     public RoomEntity update(Integer id, RoomEntity room) {

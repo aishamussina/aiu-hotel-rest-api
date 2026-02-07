@@ -26,6 +26,12 @@ public class RoomController {
         return repo.save(room);
     }
 
+    @PutMapping("/{id}")
+    public RoomEntity update(@PathVariable Integer id, @RequestBody RoomEntity room) {
+        room.setRoomNumber(id);
+        return repo.save(room);
+    }
+
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Integer id) {
         repo.deleteById(id);

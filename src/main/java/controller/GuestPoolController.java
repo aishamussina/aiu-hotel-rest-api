@@ -43,9 +43,13 @@ public class GuestPoolController {
     public List<GuestEntity> search(@RequestParam String q) {
         String query = q.toLowerCase();
         return pool.stream()
-                .filter(g -> g.getName() != null && g.getName().toLowerCase().contains(query))
+                .filter(g ->
+                        (g.getName() != null && g.getName().toLowerCase().contains(query)) ||
+                                (g.getPhone() != null && g.getPhone().toLowerCase().contains(query))
+                )
                 .collect(Collectors.toList());
     }
+
 
     @GetMapping("/sort/age")
     public List<GuestEntity> sortByAge() {
