@@ -38,6 +38,30 @@ Rooms:
 http://localhost:8080/api/guests
 
 ---
+## REST API Endpoints
+
+### Guests (JDBC)
+
+GET http://localhost:8080/jdbc/guests  
+POST http://localhost:8080/jdbc/guests  
+PUT http://localhost:8080/jdbc/guests/{id}  
+DELETE http://localhost:8080/jdbc/guests/{id}
+
+### Rooms (JDBC)
+
+GET http://localhost:8080/jdbc/rooms  
+POST http://localhost:8080/jdbc/rooms  
+PUT http://localhost:8080/jdbc/rooms/{roomNumber}  
+DELETE http://localhost:8080/jdbc/rooms/{roomNumber}
+
+### Data Pool (Streams + Lambda)
+
+GET http://localhost:8080/api/guests/pool/refresh  
+GET http://localhost:8080/api/guests/pool  
+GET http://localhost:8080/api/guests/pool/search?q=value  
+GET http://localhost:8080/api/guests/pool/filter?minAge=20  
+GET http://localhost:8080/api/guests/pool/sort/age
+
 
 Student: Aisha Mussina  
 Course: Object-Oriented Programming  
