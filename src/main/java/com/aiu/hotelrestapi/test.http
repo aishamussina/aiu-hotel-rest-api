@@ -1,0 +1,80 @@
+### CREATE ROOM 402
+POST http://localhost:8080/jdbc/rooms
+Content-Type: application/json
+
+{
+  "roomNumber": 402,
+  "roomType": "single",
+  "pricePerNight": 20000,
+  "available": true
+}
+
+### CREATE ROOM 403
+POST http://localhost:8080/jdbc/rooms
+Content-Type: application/json
+
+{
+  "roomNumber": 403,
+  "roomType": "double",
+  "pricePerNight": 35000,
+  "available": true
+}
+
+### CREATE ROOM 404
+POST http://localhost:8080/jdbc/rooms
+Content-Type: application/json
+
+{
+  "roomNumber": 404,
+  "roomType": "double",
+  "pricePerNight": 42000,
+  "available": false
+}
+
+### CREATE GUEST 1
+POST http://localhost:8080/jdbc/guests
+Content-Type: application/json
+
+{
+  "name": "Dana",
+  "age": 20,
+  "phone": "87001110001"
+}
+
+### CREATE GUEST 2
+POST http://localhost:8080/jdbc/guests
+Content-Type: application/json
+
+{
+  "name": "Ali",
+  "age": 18,
+  "phone": "87001110002"
+}
+
+### CREATE GUEST 3
+POST http://localhost:8080/jdbc/guests
+Content-Type: application/json
+
+{
+  "name": "Arman",
+  "age": 22,
+  "phone": "87001110003"
+}
+
+### SHOW ROOMS
+GET http://localhost:8080/jdbc/rooms
+
+### SHOW GUESTS
+GET http://localhost:8080/jdbc/guests
+
+### REFRESH POOL
+GET http://localhost:8080/api/guests/pool/refresh
+
+### SEARCH POOL
+GET http://localhost:8080/api/guests/pool/search?q=87
+
+### FILTER AGE >= 20
+GET http://localhost:8080/api/guests/pool/filter?minAge=20
+
+### SORT AGE
+GET http://localhost:8080/api/guests/pool/sort/age
