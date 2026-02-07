@@ -26,6 +26,9 @@ Design patterns are also implemented. Factory Pattern is used in RoomFactory to 
 
 The project can be launched from IntelliJ IDEA after configuring PostgreSQL credentials in application.properties. REST endpoints can be tested via browser, Postman, or IntelliJ HTTP Client.
 
+API Documentation & Testing (Swagger UI)
+Swagger UI is integrated into this project to provide interactive REST API documentation and testing. After starting the application, Swagger UI is available at: http://localhost:8080/swagger-ui/index.html Swagger automatically scans all REST controllers and generates API documentation with live testing support for GET, POST, PUT and DELETE requests. It was used to verify CRUD operations and JSON responses during development and project defense.
+
 Main REST endpoints include:
 
 http://localhost:8080/jdbc/guests
